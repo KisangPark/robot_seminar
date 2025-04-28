@@ -30,7 +30,6 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-
             # put user defined executables below
             # be aware of format!
             # 'executable_name = package_name.file_name:main',
