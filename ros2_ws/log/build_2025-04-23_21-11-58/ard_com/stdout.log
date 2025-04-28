@@ -1,0 +1,15 @@
+running develop
+running egg_info
+writing ard_com.egg-info/PKG-INFO
+writing dependency_links to ard_com.egg-info/dependency_links.txt
+writing entry points to ard_com.egg-info/entry_points.txt
+writing requirements to ard_com.egg-info/requires.txt
+writing top-level names to ard_com.egg-info/top_level.txt
+reading manifest file 'ard_com.egg-info/SOURCES.txt'
+writing manifest file 'ard_com.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/kisangpark/workspace/ros2_ws/install/ard_com/lib/python3.10/site-packages/ard-com.egg-link (link to .)
+Installing serial_example script to /home/kisangpark/workspace/ros2_ws/install/ard_com/lib/ard_com
+
+Installed /home/kisangpark/workspace/ros2_ws/build/ard_com
+running symlink_data

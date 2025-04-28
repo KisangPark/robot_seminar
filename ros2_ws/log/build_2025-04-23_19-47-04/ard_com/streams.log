@@ -1,0 +1,32 @@
+[1.331s] Invoking command in '/home/kisangpark/workspace/ros2_ws/build/ard_com': PYTHONPATH=/home/kisangpark/workspace/ros2_ws/build/ard_com/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kisangpark/workspace/ros2_ws/install/ard_com/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/kisangpark/workspace/ros2_ws/build/ard_com/build
+[1.636s] running develop
+[1.810s] Removing /home/kisangpark/workspace/ros2_ws/install/ard_com/lib/python3.10/site-packages/ard-com.egg-link (link to .)
+[1.856s] Invoked command in '/home/kisangpark/workspace/ros2_ws/build/ard_com' returned '0': PYTHONPATH=/home/kisangpark/workspace/ros2_ws/build/ard_com/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kisangpark/workspace/ros2_ws/install/ard_com/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/kisangpark/workspace/ros2_ws/build/ard_com/build
+[1.860s] Invoking command in '/home/kisangpark/workspace/ros2_ws/src/ard_com': PYTHONPATH=/home/kisangpark/workspace/ros2_ws/build/ard_com/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kisangpark/workspace/ros2_ws/install/ard_com/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ard_com build --build-base /home/kisangpark/workspace/ros2_ws/build/ard_com/build install --record /home/kisangpark/workspace/ros2_ws/build/ard_com/install.log --single-version-externally-managed install_data --force
+[2.134s] running egg_info
+[2.136s] writing ../../build/ard_com/ard_com.egg-info/PKG-INFO
+[2.137s] writing dependency_links to ../../build/ard_com/ard_com.egg-info/dependency_links.txt
+[2.137s] writing entry points to ../../build/ard_com/ard_com.egg-info/entry_points.txt
+[2.138s] writing requirements to ../../build/ard_com/ard_com.egg-info/requires.txt
+[2.138s] writing top-level names to ../../build/ard_com/ard_com.egg-info/top_level.txt
+[2.140s] reading manifest file '../../build/ard_com/ard_com.egg-info/SOURCES.txt'
+[2.142s] writing manifest file '../../build/ard_com/ard_com.egg-info/SOURCES.txt'
+[2.142s] running build
+[2.142s] running build_py
+[2.144s] copying ard_com/serial_example.py -> /home/kisangpark/workspace/ros2_ws/build/ard_com/build/lib/ard_com
+[2.145s] running install
+[2.145s] running install_lib
+[2.146s] creating /home/kisangpark/workspace/ros2_ws/install/ard_com/lib/python3.10/site-packages/ard_com
+[2.146s] copying /home/kisangpark/workspace/ros2_ws/build/ard_com/build/lib/ard_com/serial_example.py -> /home/kisangpark/workspace/ros2_ws/install/ard_com/lib/python3.10/site-packages/ard_com
+[2.147s] copying /home/kisangpark/workspace/ros2_ws/build/ard_com/build/lib/ard_com/__init__.py -> /home/kisangpark/workspace/ros2_ws/install/ard_com/lib/python3.10/site-packages/ard_com
+[2.147s] byte-compiling /home/kisangpark/workspace/ros2_ws/install/ard_com/lib/python3.10/site-packages/ard_com/serial_example.py to serial_example.cpython-310.pyc
+[2.149s] byte-compiling /home/kisangpark/workspace/ros2_ws/install/ard_com/lib/python3.10/site-packages/ard_com/__init__.py to __init__.cpython-310.pyc
+[2.149s] running install_data
+[2.151s] copying resource/ard_com -> /home/kisangpark/workspace/ros2_ws/install/ard_com/share/ament_index/resource_index/packages
+[2.153s] copying package.xml -> /home/kisangpark/workspace/ros2_ws/install/ard_com/share/ard_com
+[2.154s] running install_egg_info
+[2.156s] Copying ../../build/ard_com/ard_com.egg-info to /home/kisangpark/workspace/ros2_ws/install/ard_com/lib/python3.10/site-packages/ard_com-0.0.0-py3.10.egg-info
+[2.158s] running install_scripts
+[2.187s] Installing serial_example script to /home/kisangpark/workspace/ros2_ws/install/ard_com/lib/ard_com
+[2.188s] writing list of installed files to '/home/kisangpark/workspace/ros2_ws/build/ard_com/install.log'
+[2.241s] Invoked command in '/home/kisangpark/workspace/ros2_ws/src/ard_com' returned '0': PYTHONPATH=/home/kisangpark/workspace/ros2_ws/build/ard_com/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kisangpark/workspace/ros2_ws/install/ard_com/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ard_com build --build-base /home/kisangpark/workspace/ros2_ws/build/ard_com/build install --record /home/kisangpark/workspace/ros2_ws/build/ard_com/install.log --single-version-externally-managed install_data --force

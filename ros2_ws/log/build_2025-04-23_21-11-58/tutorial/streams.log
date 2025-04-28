@@ -1,0 +1,20 @@
+[1.331s] Invoking command in '/home/kisangpark/workspace/ros2_ws/build/tutorial': PYTHONPATH=/home/kisangpark/workspace/ros2_ws/build/tutorial/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kisangpark/workspace/ros2_ws/install/tutorial/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/kisangpark/workspace/ros2_ws/build/tutorial/build --no-deps symlink_data
+[1.636s] running develop
+[1.805s] running egg_info
+[1.806s] writing tutorial.egg-info/PKG-INFO
+[1.806s] writing dependency_links to tutorial.egg-info/dependency_links.txt
+[1.807s] writing entry points to tutorial.egg-info/entry_points.txt
+[1.807s] writing requirements to tutorial.egg-info/requires.txt
+[1.808s] writing top-level names to tutorial.egg-info/top_level.txt
+[1.811s] reading manifest file 'tutorial.egg-info/SOURCES.txt'
+[1.812s] writing manifest file 'tutorial.egg-info/SOURCES.txt'
+[1.814s] running build_ext
+[1.814s] Creating /home/kisangpark/workspace/ros2_ws/install/tutorial/lib/python3.10/site-packages/tutorial.egg-link (link to .)
+[1.815s] Installing publisher_example script to /home/kisangpark/workspace/ros2_ws/install/tutorial/lib/tutorial
+[1.816s] Installing service_example script to /home/kisangpark/workspace/ros2_ws/install/tutorial/lib/tutorial
+[1.816s] Installing subscriber_example script to /home/kisangpark/workspace/ros2_ws/install/tutorial/lib/tutorial
+[1.816s] 
+[1.816s] Installed /home/kisangpark/workspace/ros2_ws/build/tutorial
+[1.817s] running symlink_data
+[1.819s] symbolically linking /home/kisangpark/workspace/ros2_ws/build/tutorial/launch/full.launch.py -> /home/kisangpark/workspace/ros2_ws/install/tutorial/share/tutorial/launch
+[1.897s] Invoked command in '/home/kisangpark/workspace/ros2_ws/build/tutorial' returned '0': PYTHONPATH=/home/kisangpark/workspace/ros2_ws/build/tutorial/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kisangpark/workspace/ros2_ws/install/tutorial/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/kisangpark/workspace/ros2_ws/build/tutorial/build --no-deps symlink_data

@@ -1,0 +1,5 @@
+[console_scripts]
+publisher_example = tutorial.publisher_example:main
+service_example = tutorial.service_example:main
+subscriber_example = tutorial.subscriber_example:main
+

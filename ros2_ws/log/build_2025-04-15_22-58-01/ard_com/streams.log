@@ -1,0 +1,19 @@
+[1.167s] Invoking command in '/home/kisangpark/workspace/ros2_ws/build/ard_com': PYTHONPATH=/home/kisangpark/workspace/ros2_ws/build/ard_com/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kisangpark/workspace/ros2_ws/install/ard_com/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/kisangpark/workspace/ros2_ws/build/ard_com/build --no-deps symlink_data --force
+[1.424s] running develop
+[1.596s] running egg_info
+[1.597s] writing ard_com.egg-info/PKG-INFO
+[1.597s] writing dependency_links to ard_com.egg-info/dependency_links.txt
+[1.598s] writing entry points to ard_com.egg-info/entry_points.txt
+[1.598s] writing requirements to ard_com.egg-info/requires.txt
+[1.599s] writing top-level names to ard_com.egg-info/top_level.txt
+[1.600s] reading manifest file 'ard_com.egg-info/SOURCES.txt'
+[1.602s] writing manifest file 'ard_com.egg-info/SOURCES.txt'
+[1.604s] running build_ext
+[1.605s] Creating /home/kisangpark/workspace/ros2_ws/install/ard_com/lib/python3.10/site-packages/ard-com.egg-link (link to .)
+[1.606s] Installing serial_example script to /home/kisangpark/workspace/ros2_ws/install/ard_com/lib/ard_com
+[1.607s] 
+[1.607s] Installed /home/kisangpark/workspace/ros2_ws/build/ard_com
+[1.607s] running symlink_data
+[1.608s] symbolically linking /home/kisangpark/workspace/ros2_ws/build/ard_com/resource/ard_com -> /home/kisangpark/workspace/ros2_ws/install/ard_com/share/ament_index/resource_index/packages
+[1.609s] symbolically linking /home/kisangpark/workspace/ros2_ws/build/ard_com/package.xml -> /home/kisangpark/workspace/ros2_ws/install/ard_com/share/ard_com
+[1.682s] Invoked command in '/home/kisangpark/workspace/ros2_ws/build/ard_com' returned '0': PYTHONPATH=/home/kisangpark/workspace/ros2_ws/build/ard_com/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kisangpark/workspace/ros2_ws/install/ard_com/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/kisangpark/workspace/ros2_ws/build/ard_com/build --no-deps symlink_data --force

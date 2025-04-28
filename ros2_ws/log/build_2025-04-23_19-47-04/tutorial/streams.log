@@ -1,0 +1,38 @@
+[1.301s] Invoking command in '/home/kisangpark/workspace/ros2_ws/build/tutorial': PYTHONPATH=/home/kisangpark/workspace/ros2_ws/build/tutorial/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kisangpark/workspace/ros2_ws/install/tutorial/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/kisangpark/workspace/ros2_ws/build/tutorial/build
+[1.585s] running develop
+[1.759s] Removing /home/kisangpark/workspace/ros2_ws/install/tutorial/lib/python3.10/site-packages/tutorial.egg-link (link to .)
+[1.803s] Invoked command in '/home/kisangpark/workspace/ros2_ws/build/tutorial' returned '0': PYTHONPATH=/home/kisangpark/workspace/ros2_ws/build/tutorial/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kisangpark/workspace/ros2_ws/install/tutorial/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/kisangpark/workspace/ros2_ws/build/tutorial/build
+[1.807s] Invoking command in '/home/kisangpark/workspace/ros2_ws/src/tutorial': PYTHONPATH=/home/kisangpark/workspace/ros2_ws/build/tutorial/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kisangpark/workspace/ros2_ws/install/tutorial/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/tutorial build --build-base /home/kisangpark/workspace/ros2_ws/build/tutorial/build install --record /home/kisangpark/workspace/ros2_ws/build/tutorial/install.log --single-version-externally-managed install_data --force
+[2.073s] running egg_info
+[2.074s] writing ../../build/tutorial/tutorial.egg-info/PKG-INFO
+[2.075s] writing dependency_links to ../../build/tutorial/tutorial.egg-info/dependency_links.txt
+[2.075s] writing entry points to ../../build/tutorial/tutorial.egg-info/entry_points.txt
+[2.076s] writing requirements to ../../build/tutorial/tutorial.egg-info/requires.txt
+[2.076s] writing top-level names to ../../build/tutorial/tutorial.egg-info/top_level.txt
+[2.079s] reading manifest file '../../build/tutorial/tutorial.egg-info/SOURCES.txt'
+[2.082s] writing manifest file '../../build/tutorial/tutorial.egg-info/SOURCES.txt'
+[2.082s] running build
+[2.082s] running build_py
+[2.083s] copying tutorial/publisher_example.py -> /home/kisangpark/workspace/ros2_ws/build/tutorial/build/lib/tutorial
+[2.084s] copying tutorial/subscriber_example.py -> /home/kisangpark/workspace/ros2_ws/build/tutorial/build/lib/tutorial
+[2.085s] running install
+[2.085s] running install_lib
+[2.086s] creating /home/kisangpark/workspace/ros2_ws/install/tutorial/lib/python3.10/site-packages/tutorial
+[2.087s] copying /home/kisangpark/workspace/ros2_ws/build/tutorial/build/lib/tutorial/publisher_example.py -> /home/kisangpark/workspace/ros2_ws/install/tutorial/lib/python3.10/site-packages/tutorial
+[2.087s] copying /home/kisangpark/workspace/ros2_ws/build/tutorial/build/lib/tutorial/__init__.py -> /home/kisangpark/workspace/ros2_ws/install/tutorial/lib/python3.10/site-packages/tutorial
+[2.087s] copying /home/kisangpark/workspace/ros2_ws/build/tutorial/build/lib/tutorial/subscriber_example.py -> /home/kisangpark/workspace/ros2_ws/install/tutorial/lib/python3.10/site-packages/tutorial
+[2.088s] byte-compiling /home/kisangpark/workspace/ros2_ws/install/tutorial/lib/python3.10/site-packages/tutorial/publisher_example.py to publisher_example.cpython-310.pyc
+[2.088s] byte-compiling /home/kisangpark/workspace/ros2_ws/install/tutorial/lib/python3.10/site-packages/tutorial/__init__.py to __init__.cpython-310.pyc
+[2.088s] byte-compiling /home/kisangpark/workspace/ros2_ws/install/tutorial/lib/python3.10/site-packages/tutorial/subscriber_example.py to subscriber_example.cpython-310.pyc
+[2.089s] running install_data
+[2.091s] copying resource/tutorial -> /home/kisangpark/workspace/ros2_ws/install/tutorial/share/ament_index/resource_index/packages
+[2.093s] copying package.xml -> /home/kisangpark/workspace/ros2_ws/install/tutorial/share/tutorial
+[2.095s] creating /home/kisangpark/workspace/ros2_ws/install/tutorial/share/tutorial/launch
+[2.095s] running install_egg_info
+[2.097s] Copying ../../build/tutorial/tutorial.egg-info to /home/kisangpark/workspace/ros2_ws/install/tutorial/lib/python3.10/site-packages/tutorial-0.0.0-py3.10.egg-info
+[2.100s] running install_scripts
+[2.125s] Installing publisher_example script to /home/kisangpark/workspace/ros2_ws/install/tutorial/lib/tutorial
+[2.126s] Installing service_example script to /home/kisangpark/workspace/ros2_ws/install/tutorial/lib/tutorial
+[2.126s] Installing subscriber_example script to /home/kisangpark/workspace/ros2_ws/install/tutorial/lib/tutorial
+[2.127s] writing list of installed files to '/home/kisangpark/workspace/ros2_ws/build/tutorial/install.log'
+[2.166s] Invoked command in '/home/kisangpark/workspace/ros2_ws/src/tutorial' returned '0': PYTHONPATH=/home/kisangpark/workspace/ros2_ws/build/tutorial/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kisangpark/workspace/ros2_ws/install/tutorial/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/tutorial build --build-base /home/kisangpark/workspace/ros2_ws/build/tutorial/build install --record /home/kisangpark/workspace/ros2_ws/build/tutorial/install.log --single-version-externally-managed install_data --force
