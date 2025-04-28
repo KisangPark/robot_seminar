@@ -1,1 +1,0 @@
-/home/kisangpark/workspace/ros2_ws/src/tutorial/launch/full.launch.py

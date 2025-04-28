@@ -1,3 +1,0 @@
-[console_scripts]
-serial_example = ard_com.serial_example:main
-
