@@ -3,7 +3,7 @@
 # 1. import rclpy, node and messages
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import Int32
+from std_msgs.msg import Int32, Float32, String
 from rclpy.qos import QoSProfile
 
 # additional python imports
@@ -23,6 +23,10 @@ class PUBLISHER_NODE(Node):
         # create publisher
         self.publisher_1 = self.create_publisher(Int32, "/int_topic", qos_profile)
 
+        """ multiple topics example: 3 topics """
+        # self.publisher_2 = self.create_publisher(Float32, "/ex2/float", qos_profile)
+        # self.publisher_3 = self.create_publisher(String, "/ex2/string", qos_profile)
+
         # create timer, to execute callback repeatedly
         self.timer = self.create_timer(0.1, self.callback)
 
@@ -38,6 +42,17 @@ class PUBLISHER_NODE(Node):
 
         # **publish message**
         self.publisher_1.publish(msg)
+
+
+        """ multiple topics example: 3 topics """
+
+        # msg2 = Float32()
+        # msg2.data = 0.1
+        # self.publisher_2.publish(msg2)
+
+        # msg3 = String()
+        # msg3.data = "example"
+        # self.publisher_3.publish(msg3)
 
 
 
