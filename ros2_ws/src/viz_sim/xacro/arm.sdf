@@ -1,0 +1,201 @@
+<sdf version='1.9'>
+  <model name='arm'>
+    <link name='base_link'>
+      <inertial>
+        <pose>0 0 0.15 0 0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.00056666666666666671</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001816666666666668</iyy>
+          <iyz>0</iyz>
+          <izz>0.0020833333333333342</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_fixed_joint_lump__bodylink_1_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.25 0.35 0</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='base_link_fixed_joint_lump__bodylink_1_visual'>
+        <pose>0 0 0.1 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.25 0.35 0.2</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0 0 1 1</diffuse>
+          <ambient>0 0 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='bodyjoint_1' type='revolute'>
+      <pose relative_to='base_link'>0 0 0.2 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>bodylink_2</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-90</lower>
+          <upper>90</upper>
+          <effort>10</effort>
+          <velocity>5</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='bodylink_2'>
+      <pose relative_to='bodyjoint_1'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 1 0 0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.00056666666666666671</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001816666666666667</iyy>
+          <iyz>0</iyz>
+          <izz>0.0020833333333333342</izz>
+        </inertia>
+      </inertial>
+      <collision name='bodylink_2_collision'>
+        <pose>0 0 0.4 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.25 0.35 0.55</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='bodylink_2_visual'>
+        <pose>0 0 0.4 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.25 0.35 0.8</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0 1 0 1</diffuse>
+          <ambient>0 1 0 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='bodyjoint_2' type='revolute'>
+      <pose relative_to='bodylink_2'>0 0 0.8 0 0 0</pose>
+      <parent>bodylink_2</parent>
+      <child>bodylink_3</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-90</lower>
+          <upper>90</upper>
+          <effort>10</effort>
+          <velocity>5</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='bodylink_3'>
+      <pose relative_to='bodyjoint_2'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 1 0 0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.00056666666666666671</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001816666666666667</iyy>
+          <iyz>0</iyz>
+          <izz>0.0020833333333333342</izz>
+        </inertia>
+      </inertial>
+      <collision name='bodylink_3_collision'>
+        <pose>0 0 0.4 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.25 0.35 0.55</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='bodylink_3_visual'>
+        <pose>0 0 0.4 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.25 0.35 0.8</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0 0 1 1</diffuse>
+          <ambient>0 0 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='bodyjoint_3' type='revolute'>
+      <pose relative_to='bodylink_3'>0 0 0.8 0 0 0</pose>
+      <parent>bodylink_3</parent>
+      <child>bodylink_4</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-90</lower>
+          <upper>90</upper>
+          <effort>10</effort>
+          <velocity>5</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='bodylink_4'>
+      <pose relative_to='bodyjoint_3'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 1 0 0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.00056666666666666671</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.001816666666666667</iyy>
+          <iyz>0</iyz>
+          <izz>0.0020833333333333342</izz>
+        </inertia>
+      </inertial>
+      <collision name='bodylink_4_collision'>
+        <pose>0 0 0.45 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.25 0.35 0.65</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='bodylink_4_visual'>
+        <pose>0 0 0.45 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.25 0.35 0.9</size>
+          </box>
+        </geometry>
+        <material>
+          <diffuse>0 1 0 1</diffuse>
+          <ambient>0 1 0 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <frame name='base_joint' attached_to='base_link'>
+      <pose>0 0 0 0 -0 0</pose>
+    </frame>
+    <frame name='bodylink_1' attached_to='base_joint'/>
+  </model>
+</sdf>

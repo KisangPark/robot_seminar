@@ -34,7 +34,6 @@ setup(
             # put user defined executables below
             # be aware of format!
             # 'executable_name = package_name.file_name:main',
-            'subscriber_example = tutorial.subscriber_example:main',
         ],
     },
 )
