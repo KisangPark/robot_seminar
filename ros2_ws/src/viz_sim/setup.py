@@ -18,8 +18,6 @@ setup(
         # put folders we created
         # launch folder
         (os.path.join('share', package_name, 'launch'), glob('launch/*.launch.py')),
-        # if more folders or files needed, add below
-        (os.path.join('share', package_name, 'xacro'), glob('xacro/*')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,

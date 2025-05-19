@@ -28,13 +28,17 @@ def generate_launch_description():
     #use sim time
     # use_sim_time = LaunchConfiguration("use_sim_time")
 
+    # seminar directory
+    seminar_directory = '/home/kisangpark/workspace/robot_seminar'
+
     # package path
-    pkg_path = os.path.join('/home/kisangpark/workspace/robot_seminar/ros2_ws/src/viz_sim')
+    pkg_path = os.path.join(seminar_directory, 'ros2_ws', 'src', 'viz_sim')
     share_pkg_path = os.path.join(get_package_share_directory('viz_sim'))
 
     # sdf path
-    world_path = os.path.join(pkg_path, 'xacro', 'empty.world')
-    robot_path = os.path.join(pkg_path, 'xacro', 'arm.sdf')
+    models_path = os.path.join(seminar_directory, 'models')
+    world_path = os.path.join(models_path, 'world', 'empty.world')
+    robot_path = os.path.join(models_path, 'simple_arm', 'model.sdf')
 
     # launch gazebo with ros_gz_sim
     sim = IncludeLaunchDescription(
@@ -49,7 +53,7 @@ def generate_launch_description():
         executable="create",
         arguments = [
             '-world', 'my_world',
-            '-name','arm',
+            '-name','simple_arm',
             '-file', robot_path,
             '-x', '0', '-y', '0', '-z', '0.5'
         ],
@@ -60,19 +64,15 @@ def generate_launch_description():
 # launch description return
     return LaunchDescription([
         # 1-1. empty gazebo world
-        # sim,
-        ExecuteProcess(
-            cmd=['ign', 'gazebo', world_path], # , '--verbose'
-            output='screen'
-        ),
+        sim,
 
         # # 1-2. delay, waiting gazebo to be ready
-        # ExecuteProcess(
-        #     cmd=['sleep', '3'],
-        #     shell=True
-        # ),
+        ExecuteProcess(
+            cmd=['sleep', '3'],
+            shell=True
+        ),
 
 
         # 2. robot sdf file spawn
-        # create_robot,
+        create_robot,
     ])
