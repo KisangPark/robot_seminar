@@ -5,6 +5,8 @@
 import rclpy
 from rclpy.node import node
 from std_msgs.msg import Int32
+from geometry_msgs.msg import Pose
+from sensor_msgs.msg import 
 from rclpy.qos import QoSProfile
 
 # additional python imports
