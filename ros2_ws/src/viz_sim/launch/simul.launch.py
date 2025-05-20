@@ -38,7 +38,7 @@ def generate_launch_description():
     # sdf path
     models_path = os.path.join(seminar_directory, 'models')
     world_path = os.path.join(models_path, 'world', 'empty.world')
-    robot_path = os.path.join(models_path, 'simple_arm', 'model.sdf')
+    robot_path = os.path.join(models_path, 'robotic_arm', 'robotic_arm.sdf')
 
     # launch gazebo with ros_gz_sim
     sim = IncludeLaunchDescription(
@@ -53,9 +53,9 @@ def generate_launch_description():
         executable="create",
         arguments = [
             '-world', 'my_world',
-            '-name','simple_arm',
+            '-name','a0912',
             '-file', robot_path,
-            '-x', '0', '-y', '0', '-z', '0.5'
+            '-x', '0', '-y', '0', '-z', '0'
         ],
         output='screen'
     )
