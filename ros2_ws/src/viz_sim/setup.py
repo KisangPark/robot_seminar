@@ -19,7 +19,7 @@ setup(
         # launch folder
         (os.path.join('share', package_name, 'launch'), glob('launch/*.launch.py')),
         (os.path.join('share', package_name, 'sdf_model'), glob('sdf_model/*.sdf')),
-        (os.path.join('share', package_name, 'sdf_model', 'meshes', 'a0912_blue'), glob('a0912_blue/*')),
+        (os.path.join('share', package_name, 'sdf_model', 'meshes', 'a0912_blue'), glob('sdf_model/meshes/a0912_blue/*.dae')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
