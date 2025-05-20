@@ -1,61 +1,72 @@
 """
-controller launch
+Launch file for ROS
+    1) Rviz2
+    2) Robot State Publisher
+    3) Joint State Publisher
 """
 
 import os
-from ament_index_python.packages import get_package_share_directory
+
+# necessary tools
+from launch_ros.actions import Node
 from launch import LaunchDescription
-from launch.substitutions import LaunchConfiguration
-from launch_ros.actions import Node
-from launch.actions import (DeclareLaunchArgument, SetEnvironmentVariable, 
-                            IncludeLaunchDescription, SetLaunchConfiguration)
-from launch.substitutions import PathJoinSubstitution, LaunchConfiguration, TextSubstitution
-from launch_ros.actions import Node
+
+
+# get other launch files, execute other processes
+from launch.actions import IncludeLaunchDescription, ExecuteProcess
+from launch.actions import SetLaunchConfiguration, DeclareLaunchArgument, SetEnvironmentVariable
+# other launch file sources
 from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.substitutions import LaunchConfiguration # can be replaced by declarelaunchargument
+
+# file path searches
+from ament_index_python.packages import get_package_share_directory
+from launch.substitutions import PathJoinSubstitution, TextSubstitution
 from launch_ros.substitutions import FindPackageShare
-import xacro
+
 
 def generate_launch_description():
-    package_name = "arm"
+    # seminar directory
+    seminar_directory = '/home/kisangpark/workspace/robot_seminar'
 
-    #robot state publisher, launch
-    rsp = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(
-            [os.path.join(get_package_share_directory(package_name), "launch", "xacro_load.launch.py")]
-        ),
-        launch_arguments={"use_sim_time": "true"}.items(),
+    # package path
+    pkg_path = os.path.join(seminar_directory, 'ros2_ws', 'src', 'viz_sim')
+    share_pkg_path = os.path.join(get_package_share_directory('viz_sim'))
+
+    # sdf path
+    models_path = os.path.join(seminar_directory, 'models')
+    world_path = os.path.join(models_path, 'world', 'empty.world')
+    robot_path = os.path.join(pkg_path, 'sdf_model', 'robotic_arm.sdf')
+
+
+    # open sdf file -> make robot description
+    with open(robot_path, 'r') as rf:
+        robot_desc = rf.read()
+
+    jsp = Node(
+        package='joint_state_publisher',
+        executable='joint_state_publisher',
+        name='joint_state_publisher',
+        arguments=[robot_path],
+        output='screen'
     )
 
-    #workspace package
-    pkg_path = os.path.join(get_package_share_directory('arm'))
+    rsp = Node(
+    package='robot_state_publisher',
+    executable='robot_state_publisher',
+    name='robot_state_publisher',
+    output='both',
+    parameters=[
+        {'use_sim_time': True},
+        {'robot_description': robot_desc},
+    ]
+)
 
-    #get_frame node
-    get_frame = Node(
-    package='arm',
-    executable='get_frame',
-    name='get_frame',
-    )
-
-    #make_action node
-    make_action = Node(
-    package='arm',
-    executable='make_action',
-    name='make_action',
-    )
-
-    #servo_control node
-    servo_control = Node(
-    package='arm',
-    executable='servo_control',
-    name='servo_control',
-    )
 
     return LaunchDescription(
         [
-            get_frame,
-            make_action,
-            servo_control,
             rsp,
+            jsp,
         ]
     )
 
