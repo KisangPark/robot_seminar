@@ -18,7 +18,8 @@ setup(
         # put folders we created
         # launch folder
         (os.path.join('share', package_name, 'launch'), glob('launch/*.launch.py')),
-        (os.path.join('share', package_name, 'sdf_model'), glob('sdf_model/*')),
+        (os.path.join('share', package_name, 'sdf_model'), glob('sdf_model/*.sdf')),
+        (os.path.join('share', package_name, 'sdf_model'), glob('sdf_model/*.yaml')),
         (os.path.join('share', package_name, 'sdf_model', 'meshes', 'a0912_blue'), glob('sdf_model/meshes/a0912_blue/*.dae')),
     ],
     install_requires=['setuptools'],

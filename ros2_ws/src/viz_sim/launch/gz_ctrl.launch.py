@@ -92,4 +92,7 @@ def generate_launch_description():
 
         # 2. robot sdf file spawn
         create_robot,
+
+        # 3. execute topic bridge
+        bridge,
     ])

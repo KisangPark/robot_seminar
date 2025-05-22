@@ -1,5 +1,5 @@
-- ros_topic_name: "j1_pos"
+- ros_topic_name: "/j1_pos"
   gz_topic_name: "/j1_pos"
-  ros_type_name: "std_msgs.msg.Double"
+  ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "ignition.msgs.Double"
   direction: BIDIRECTIONAL
