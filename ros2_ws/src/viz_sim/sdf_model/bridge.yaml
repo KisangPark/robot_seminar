@@ -1,0 +1,5 @@
+- ros_topic_name: "j1_pos"
+  gz_topic_name: "/j1_pos"
+  ros_type_name: "std_msgs.msg.Double"
+  gz_type_name: "ignition.msgs.Double"
+  direction: BIDIRECTIONAL
