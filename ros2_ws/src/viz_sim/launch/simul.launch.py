@@ -33,12 +33,14 @@ def generate_launch_description():
 
     # package path
     pkg_path = os.path.join(seminar_directory, 'ros2_ws', 'src', 'viz_sim')
-    share_pkg_path = os.path.join(get_package_share_directory('viz_sim'))
+    share_pkg_path = os.path.join(get_package_share_directory('viz_sim')) # share path: install/viz_sim/share
+    print(share_pkg_path)
 
     # sdf path
     models_path = os.path.join(seminar_directory, 'models')
     world_path = os.path.join(models_path, 'world', 'empty.world')
-    robot_path = os.path.join(models_path, 'robotic_arm', 'robotic_arm.sdf')
+    # robot_path = os.path.join(models_path, 'robotic_arm', 'robotic_arm.sdf')
+    robot_path = os.path.join(share_pkg_path, 'viz_sim', 'sdf_model', 'robotic_arm.sdf')
 
     # launch gazebo with ros_gz_sim
     sim = IncludeLaunchDescription(

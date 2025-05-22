@@ -34,6 +34,7 @@ setup(
             # put user defined executables below
             # be aware of format!
             # 'executable_name = package_name.file_name:main',
+            'package_test = viz_sim.package_test:main',
         ],
     },
 )

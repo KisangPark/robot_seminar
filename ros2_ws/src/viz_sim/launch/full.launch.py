@@ -36,7 +36,10 @@ def generate_launch_description():
     # sdf path
     models_path = os.path.join(seminar_directory, 'models')
     world_path = os.path.join(models_path, 'world', 'empty.world')
-    robot_path = os.path.join(pkg_path, 'sdf_model', 'robotic_arm.sdf')
+    # robot_path = os.path.join(pkg_path, 'sdf_model', 'robotic_arm.sdf')
+
+    # change robot path to share directory
+    robot_path = os.path.join(share_pkg_path, 'sdf_model', 'robotic_arm.sdf')
 
 
     # open sdf file -> make robot description
