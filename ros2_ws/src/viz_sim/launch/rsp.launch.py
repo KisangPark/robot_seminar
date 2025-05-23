@@ -46,13 +46,13 @@ def generate_launch_description():
     with open(robot_path, 'r') as rf:
         robot_desc = rf.read()
 
-    jsp = Node(
-        package='joint_state_publisher',
-        executable='joint_state_publisher',
-        name='joint_state_publisher',
-        arguments=[robot_path],
-        output='screen'
-    )
+    # jsp = Node(
+    #     package='joint_state_publisher',
+    #     executable='joint_state_publisher',
+    #     name='joint_state_publisher',
+    #     arguments=[robot_path],
+    #     output='screen'
+    # )
 
     rsp = Node(
     package='robot_state_publisher',
@@ -69,7 +69,7 @@ def generate_launch_description():
     return LaunchDescription(
         [
             rsp,
-            jsp,
+            # jsp,
         ]
     )
 

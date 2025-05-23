@@ -75,7 +75,7 @@ def generate_launch_description():
             'qos_overrides./tf_static.publisher.durability': 'transient_local',
         }],
         output='screen'
-    # )
+    )
 
 
 # launch description return
