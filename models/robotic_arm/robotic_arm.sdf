@@ -19,7 +19,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>package://viz_sim/sdf_model/meshes/a0912_blue/A0912_0_0.dae</uri>
+            <uri>model://robotic_arm/meshes/a0912_blue/A0912_0_0.dae</uri>
           </mesh>
         </geometry>
       </collision>
@@ -28,7 +28,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>package://viz_sim/sdf_model/meshes/a0912_blue/A0912_0_0.dae</uri>
+            <uri>model://robotic_arm/meshes/a0912_blue/A0912_0_0.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -81,7 +81,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>package://viz_sim/sdf_model/meshes/a0912_blue/A0912_1_0.dae</uri>
+            <uri>model://robotic_arm/meshes/a0912_blue/A0912_1_0.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -90,7 +90,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>package://viz_sim/sdf_model/meshes/a0912_blue/A0912_1_1.dae</uri>
+            <uri>model://robotic_arm/meshes/a0912_blue/A0912_1_1.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -99,7 +99,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>package://viz_sim/sdf_model/meshes/a0912_blue/A0912_1_2.dae</uri>
+            <uri>model://robotic_arm/meshes/a0912_blue/A0912_1_2.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -152,7 +152,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>package://viz_sim/sdf_model/meshes/a0912_blue/A0912_2_0.dae</uri>
+            <uri>model://robotic_arm/meshes/a0912_blue/A0912_2_0.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -161,7 +161,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>package://viz_sim/sdf_model/meshes/a0912_blue/A0912_2_1.dae</uri>
+            <uri>model://robotic_arm/meshes/a0912_blue/A0912_2_1.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -170,7 +170,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>package://viz_sim/sdf_model/meshes/a0912_blue/A0912_2_2.dae</uri>
+            <uri>model://robotic_arm/meshes/a0912_blue/A0912_2_2.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -214,7 +214,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>package://viz_sim/sdf_model/meshes/a0912_blue/A0912_3_0.dae</uri>
+            <uri>model://robotic_arm/meshes/a0912_blue/A0912_3_0.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -223,7 +223,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>package://viz_sim/sdf_model/meshes/a0912_blue/A0912_3_1.dae</uri>
+            <uri>model://robotic_arm/meshes/a0912_blue/A0912_3_1.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -276,7 +276,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>package://viz_sim/sdf_model/meshes/a0912_blue/A0912_4_0.dae</uri>
+            <uri>model://robotic_arm/meshes/a0912_blue/A0912_4_0.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -285,7 +285,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>package://viz_sim/sdf_model/meshes/a0912_blue/A0912_4_1.dae</uri>
+            <uri>model://robotic_arm/meshes/a0912_blue/A0912_4_1.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -338,7 +338,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>package://viz_sim/sdf_model/meshes/a0912_blue/A0912_5_0.dae</uri>
+            <uri>model://robotic_arm/meshes/a0912_blue/A0912_5_0.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -347,7 +347,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>package://viz_sim/sdf_model/meshes/a0912_blue/A0912_5_1.dae</uri>
+            <uri>model://robotic_arm/meshes/a0912_blue/A0912_5_1.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -391,7 +391,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>package://viz_sim/sdf_model/meshes/a0912_blue/A0912_6_0.dae</uri>
+            <uri>model://robotic_arm/meshes/a0912_blue/A0912_6_0.dae</uri>
           </mesh>
         </geometry>
       </collision>
@@ -400,26 +400,10 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>package://viz_sim/sdf_model/meshes/a0912_blue/A0912_6_0.dae</uri>
+            <uri>model://robotic_arm/meshes/a0912_blue/A0912_6_0.dae</uri>
           </mesh>
         </geometry>
       </visual>
     </link>
-
-    <plugin name="ignition::gazebo::systems::JointForceCmd" filename="libignition-gazebo-joint-force-system.so">
-      <joint_name>joint1</joint1>
-      <topic>j1_cmd</topic>
-    </plugin>
-    <plugin filename="libignition-gazebo-joint-position-controller-system.so" name="ignition::gazebo::systems::JointPositionController">
-      <joint_name>joint2</joint_name>
-      <p_gain>10</p_gain>
-      <i_gain>0.1</i_gain>
-      <d_gain>0.01</d_gain>
-      <i_max>1</i_max>
-      <i_min>-1</i_min>
-      <cmd_max>1000</cmd_max>
-      <cmd_min>-1000</cmd_min>
-    </plugin>
-
   </model>
 </sdf>

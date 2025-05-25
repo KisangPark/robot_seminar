@@ -37,7 +37,7 @@ class SERIAL_WRITER(Node):
 
         # generate text
         msg = Int32()
-        number = np.random.randint(1,5)
+        number = np.random.randint(70,110)
         msg.data = number
         print(f"random number: {number}")
         text= f"{number}"
@@ -47,8 +47,9 @@ class SERIAL_WRITER(Node):
         self.publisher_1.publish(msg)
 
         # arduino serial write (encoding with ASCII)
-        serial_out.write(text.encode()) # ord function & chr function
-        time.sleep(1)
+        # serial_out.write(number.to_bytes(8, 'big')) # ord function & chr function
+        serial_out.write(text.encode())
+        time.sleep(1.01)
 
         # get serial return & visualize (print)
         if serial_out.readable():
