@@ -30,7 +30,7 @@ class SERIAL_WRITER(Node):
 
         # declare publisher, create timer
         self.publisher_1 = self.create_publisher(Int32, "serial_write", qos_profile)
-        self.timer_1 = self.create_timer(5, self.write_serial)
+        self.timer_1 = self.create_timer(0.1, self.write_serial)
 
     # timer callback
     def write_serial(self):
@@ -39,7 +39,7 @@ class SERIAL_WRITER(Node):
         msg = Int32()
         number = np.random.randint(70,110)
         msg.data = number
-        print(f"random number: {number}")
+        print(f"python-generated random number: {number}")
         text= f"{number}"
 
         # publish ROS2 topic, get logger
@@ -49,12 +49,13 @@ class SERIAL_WRITER(Node):
         # arduino serial write (encoding with ASCII)
         # serial_out.write(number.to_bytes(8, 'big')) # ord function & chr function
         serial_out.write(text.encode())
-        time.sleep(1.01)
+        time.sleep(0.21) # wait during arduino process
 
         # get serial return & visualize (print)
         if serial_out.readable():
-            response = serial_out.readline()
-            print(response[:len(response)-1].decode())
+            response = serial_out.readline() # receive bytes (= string)
+            received_data = int(response[:len(response)-1].decode())
+            print("python received:", received_data)
 
 # main code -> spin
 def main():

@@ -1,0 +1,555 @@
+<sdf version='1.9'>
+  <world name='my_world'>
+    <physics name='1ms' type='ignored'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <plugin name='ignition::gazebo::systems::Physics' filename='libignition-gazebo-physics-system.so'/>
+    <plugin name='ignition::gazebo::systems::UserCommands' filename='libignition-gazebo-user-commands-system.so'/>
+    <plugin name='ignition::gazebo::systems::SceneBroadcaster' filename='libignition-gazebo-scene-broadcaster-system.so'/>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>true</shadows>
+    </scene>
+    <model name='ground_plane'>
+      <static>true</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>1 1</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+            <diffuse>0.8 0.8 0.8 1</diffuse>
+            <specular>0.8 0.8 0.8 1</specular>
+          </material>
+        </visual>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>0 0 0 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='a0912'>
+      <link name='base_0'>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>4e-06 -0.001016 0.08181 0 -0 0</pose>
+          <mass>3.6349999999999998</mass>
+          <inertia>
+            <ixx>0.022159999999999999</ixx>
+            <ixy>5.8000999999999997e-06</ixy>
+            <ixz>6.1940999999999997e-06</ixz>
+            <iyy>0.024834999999999999</iyy>
+            <iyz>-5.3034000000000001e-05</iyz>
+            <izz>0.021062999999999998</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_0_collision'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/kisangpark/workspace/robot_seminar/ros2_ws/install/viz_sim/share/viz_sim/sdf_model/package://viz_sim/sdf_model/meshes/a0912_blue/A0912_0_0.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='base_0_visual'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/kisangpark/workspace/robot_seminar/ros2_ws/install/viz_sim/share/viz_sim/sdf_model/package://viz_sim/sdf_model/meshes/a0912_blue/A0912_0_0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <enable_wind>false</enable_wind>
+      </link>
+      <joint name='joint1' type='revolute'>
+        <pose>0 0 0 0 -0 0</pose>
+        <parent>base_0</parent>
+        <child>link1</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-6.2831999999999999</lower>
+            <upper>6.2831999999999999</upper>
+            <effort>411</effort>
+            <velocity>3.1415999999999999</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+            <damping>60</damping>
+            <friction>4</friction>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='link1'>
+        <pose>-0 0 0.195 0 -0 0</pose>
+        <inertial>
+          <pose>4.4e-05 0.029982 -0.01112 0 -0 0</pose>
+          <mass>7.8630000000000004</mass>
+          <inertia>
+            <ixx>0.045838999999999998</ixx>
+            <ixy>1.2758999999999999e-05</ixy>
+            <ixz>-3.6168000000000003e-05</ixz>
+            <iyy>0.032912999999999998</iyy>
+            <iyz>-0.0029965</iyz>
+            <izz>0.044399000000000001</izz>
+          </inertia>
+        </inertial>
+        <collision name='link1_collision'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.20000000000000001</length>
+              <radius>0.080000000000000002</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='link1_visual'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/kisangpark/workspace/robot_seminar/ros2_ws/install/viz_sim/share/viz_sim/sdf_model/package://viz_sim/sdf_model/meshes/a0912_blue/A0912_1_0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='link1_visual_1'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/kisangpark/workspace/robot_seminar/ros2_ws/install/viz_sim/share/viz_sim/sdf_model/package://viz_sim/sdf_model/meshes/a0912_blue/A0912_1_1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='link1_visual_2'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/kisangpark/workspace/robot_seminar/ros2_ws/install/viz_sim/share/viz_sim/sdf_model/package://viz_sim/sdf_model/meshes/a0912_blue/A0912_1_2.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <enable_wind>false</enable_wind>
+      </link>
+      <joint name='joint2' type='revolute'>
+        <pose>0 -0 -0 0 0 -0</pose>
+        <parent>link1</parent>
+        <child>link2</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-6.2831999999999999</lower>
+            <upper>6.2831999999999999</upper>
+            <effort>411</effort>
+            <velocity>3.1415999999999999</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+            <damping>50</damping>
+            <friction>3</friction>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='link2'>
+        <pose>-0 0.039 0.195 3.14159 -1.57059 1.57059</pose>
+        <inertial>
+          <pose>0.19748 0.001426 0.13191 0 -0 0</pose>
+          <mass>10.984999999999999</mass>
+          <inertia>
+            <ixx>0.04446</ixx>
+            <ixy>-0.0049947999999999998</ixy>
+            <ixz>-0.010992</ixz>
+            <iyy>0.67642000000000002</iyy>
+            <iyz>-2.8483000000000002e-05</iyz>
+            <izz>0.67427999999999999</izz>
+          </inertia>
+        </inertial>
+        <collision name='link2_collision'>
+          <pose>0.3 0 0.1525 0 -1.570796326794897 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.59999999999999998</length>
+              <radius>0.080000000000000002</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='link2_visual'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/kisangpark/workspace/robot_seminar/ros2_ws/install/viz_sim/share/viz_sim/sdf_model/package://viz_sim/sdf_model/meshes/a0912_blue/A0912_2_0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='link2_visual_1'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/kisangpark/workspace/robot_seminar/ros2_ws/install/viz_sim/share/viz_sim/sdf_model/package://viz_sim/sdf_model/meshes/a0912_blue/A0912_2_1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='link2_visual_2'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/kisangpark/workspace/robot_seminar/ros2_ws/install/viz_sim/share/viz_sim/sdf_model/package://viz_sim/sdf_model/meshes/a0912_blue/A0912_2_2.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <enable_wind>false</enable_wind>
+      </link>
+      <joint name='joint3' type='revolute'>
+        <pose>-0 0 -0 0 -0 -0</pose>
+        <parent>link2</parent>
+        <child>link3</child>
+        <axis>
+          <xyz>-0 0 1</xyz>
+          <limit>
+            <lower>-2.7925</lower>
+            <upper>2.7925</upper>
+            <effort>194</effort>
+            <velocity>3.1415999999999999</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+            <damping>40</damping>
+            <friction>2</friction>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='link3'>
+        <pose>0 0.039114 0.755 -1.571 0.000204 -0.000204</pose>
+        <inertial>
+          <pose>8.5e-05 -0.002513 0.032058 0 -0 0</pose>
+          <mass>2.8809999999999998</mass>
+          <inertia>
+            <ixx>0.012756</ixx>
+            <ixy>-5.4257000000000004e-06</ixy>
+            <ixz>1.6402e-05</ixz>
+            <iyy>0.011416000000000001</iyy>
+            <iyz>-0.00019890000000000001</iyz>
+            <izz>0.0080651999999999998</izz>
+          </inertia>
+        </inertial>
+        <visual name='link3_visual'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/kisangpark/workspace/robot_seminar/ros2_ws/install/viz_sim/share/viz_sim/sdf_model/package://viz_sim/sdf_model/meshes/a0912_blue/A0912_3_0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='link3_visual_1'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/kisangpark/workspace/robot_seminar/ros2_ws/install/viz_sim/share/viz_sim/sdf_model/package://viz_sim/sdf_model/meshes/a0912_blue/A0912_3_1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <enable_wind>false</enable_wind>
+      </link>
+      <joint name='joint4' type='revolute'>
+        <pose>-0 -0 -0 -0 -0 -0</pose>
+        <parent>link3</parent>
+        <child>link4</child>
+        <axis>
+          <xyz>-0 0 1</xyz>
+          <limit>
+            <lower>-6.2831999999999999</lower>
+            <upper>6.2831999999999999</upper>
+            <effort>50</effort>
+            <velocity>6.2831999999999999</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+            <damping>20</damping>
+            <friction>1</friction>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='link4'>
+        <pose>0.000105 0.039219 1.271 -0 0.000204 -0.000204</pose>
+        <inertial>
+          <pose>-9.6e-05 0.085314 -0.13975 0 -0 0</pose>
+          <mass>3.2730000000000001</mass>
+          <inertia>
+            <ixx>0.12246</ixx>
+            <ixy>2.3904999999999999e-05</ixy>
+            <ixz>2.5021999999999999e-05</ixz>
+            <iyy>0.11307</iyy>
+            <iyz>-0.027994999999999999</iyz>
+            <izz>0.017186</izz>
+          </inertia>
+        </inertial>
+        <collision name='link4_collision'>
+          <pose>0 0.075 -0.2 -0.46 0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.40000000000000002</length>
+              <radius>0.050000000000000003</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='link4_visual'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/kisangpark/workspace/robot_seminar/ros2_ws/install/viz_sim/share/viz_sim/sdf_model/package://viz_sim/sdf_model/meshes/a0912_blue/A0912_4_0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='link4_visual_1'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/kisangpark/workspace/robot_seminar/ros2_ws/install/viz_sim/share/viz_sim/sdf_model/package://viz_sim/sdf_model/meshes/a0912_blue/A0912_4_1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <enable_wind>false</enable_wind>
+      </link>
+      <joint name='joint5' type='revolute'>
+        <pose>-0 -0 -0 0 -0 -0</pose>
+        <parent>link4</parent>
+        <child>link5</child>
+        <axis>
+          <xyz>-0 0 1</xyz>
+          <limit>
+            <lower>-6.2831999999999999</lower>
+            <upper>6.2831999999999999</upper>
+            <effort>50</effort>
+            <velocity>6.2831999999999999</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+            <damping>10</damping>
+            <friction>1</friction>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='link5'>
+        <pose>0.000105 0.039219 1.271 -1.571 0.000204 -0.000204</pose>
+        <inertial>
+          <pose>0.000109 -0.003286 0.01477 0 -0 0</pose>
+          <mass>2.141</mass>
+          <inertia>
+            <ixx>0.013145</ixx>
+            <ixy>-4.7132e-06</ixy>
+            <ixz>8.5804e-06</ixz>
+            <iyy>0.0073071999999999998</iyy>
+            <iyz>-5.999e-05</iyz>
+            <izz>0.0090475999999999994</izz>
+          </inertia>
+        </inertial>
+        <collision name='link5_collision'>
+          <pose>0 0 0 1.571 0 0</pose>
+          <geometry>
+            <cylinder>
+              <length>0.14999999999999999</length>
+              <radius>0.059999999999999998</radius>
+            </cylinder>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='link5_visual'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/kisangpark/workspace/robot_seminar/ros2_ws/install/viz_sim/share/viz_sim/sdf_model/package://viz_sim/sdf_model/meshes/a0912_blue/A0912_5_0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='link5_visual_1'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/kisangpark/workspace/robot_seminar/ros2_ws/install/viz_sim/share/viz_sim/sdf_model/package://viz_sim/sdf_model/meshes/a0912_blue/A0912_5_1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <enable_wind>false</enable_wind>
+      </link>
+      <joint name='joint6' type='revolute'>
+        <pose>-0 0 0 -0 -0 -0</pose>
+        <parent>link5</parent>
+        <child>link6</child>
+        <axis>
+          <xyz>-0 0 1</xyz>
+          <limit>
+            <lower>-6.2831999999999999</lower>
+            <upper>6.2831999999999999</upper>
+            <effort>50</effort>
+            <velocity>6.2831999999999999</velocity>
+            <stiffness>100000000</stiffness>
+            <dissipation>1</dissipation>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+            <damping>10</damping>
+            <friction>1</friction>
+          </dynamics>
+        </axis>
+      </joint>
+      <link name='link6'>
+        <pose>0.00013 0.039244 1.395 -0 0.000204 -0.000204</pose>
+        <inertial>
+          <pose>-1.9e-05 -6e-06 -0.05227 0 -0 0</pose>
+          <mass>0.78400000000000003</mass>
+          <inertia>
+            <ixx>0.0067403000000000003</ixx>
+            <ixy>5.2372999999999998e-06</ixy>
+            <ixz>2.4957000000000001e-06</ixz>
+            <iyy>0.0048015000000000002</iyy>
+            <iyz>8.3670999999999999e-06</iyz>
+            <izz>0.0059696000000000003</izz>
+          </inertia>
+        </inertial>
+        <collision name='link6_collision'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/kisangpark/workspace/robot_seminar/ros2_ws/install/viz_sim/share/viz_sim/sdf_model/package://viz_sim/sdf_model/meshes/a0912_blue/A0912_6_0.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='link6_visual'>
+          <pose>0 0 0 0 0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>0.001 0.001 0.001</scale>
+              <uri>file:///home/kisangpark/workspace/robot_seminar/ros2_ws/install/viz_sim/share/viz_sim/sdf_model/package://viz_sim/sdf_model/meshes/a0912_blue/A0912_6_0.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <enable_wind>false</enable_wind>
+      </link>
+      <plugin name='ignition::gazebo::systems::JointPositionController' filename='libignition-gazebo-joint-position-controller-system.so'>
+        <joint_name>joint1</joint_name>
+        <p_gain>10</p_gain>
+        <i_gain>0.1</i_gain>
+        <d_gain>0.01</d_gain>
+        <i_max>1</i_max>
+        <i_min>-1</i_min>
+        <cmd_max>1000</cmd_max>
+        <cmd_min>-1000</cmd_min>
+      </plugin>
+      <pose>0 0 0 0 -0.001568 0</pose>
+      <static>false</static>
+      <self_collide>false</self_collide>
+    </model>
+    <light name='sun' type='directional'>
+      <pose>0 0 10 0 -0 0</pose>
+      <cast_shadows>true</cast_shadows>
+      <intensity>1</intensity>
+      <direction>-0.5 0.1 -0.9</direction>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <linear>0.01</linear>
+        <constant>0.90000000000000002</constant>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+  </world>
+</sdf>

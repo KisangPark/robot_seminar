@@ -45,6 +45,8 @@ def generate_launch_description():
     # bridge yaml file location
     bridge_path = os.path.join(share_pkg_path, 'sdf_model', 'bridge.yaml')
 
+
+
     # launch gazebo with ros_gz_sim
     sim = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
@@ -62,7 +64,7 @@ def generate_launch_description():
             '-file', robot_path,
             '-x', '0', '-y', '0', '-z', '0'
         ],
-        parameters=[{'use_sim_time': True}],
+        parameters=[{'use_sim_time': True,}],
         output='screen'
     )
 
@@ -73,7 +75,16 @@ def generate_launch_description():
         parameters=[{
             'config_file': bridge_path,
             'qos_overrides./tf_static.publisher.durability': 'transient_local',
+            'use_sim_time': True,
         }],
+        output='screen'
+    )
+
+    # command publisher node
+    cpn = Node(
+        package='viz_sim',
+        executable='command_publisher',
+        parameters=[{'use_sim_time': True,}],
         output='screen'
     )
 
@@ -95,4 +106,7 @@ def generate_launch_description():
 
         # 3. execute topic bridge
         bridge,
+
+        # test: command publisher
+        cpn,
     ])
