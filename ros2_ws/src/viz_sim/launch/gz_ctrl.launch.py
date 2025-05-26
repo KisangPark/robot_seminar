@@ -1,5 +1,8 @@
 """
-loading sdf files & launch gazebo
+Launch gazebo!
+    - launch empty world via ros_gz_sim
+    - spawn robot model
+    - execute ros_gz_bridge
 """
 
 import os
@@ -36,7 +39,7 @@ def generate_launch_description():
     share_pkg_path = os.path.join(get_package_share_directory('viz_sim')) # share path: install/viz_sim/share/viz_sim
 
     # sdf path
-    models_path = os.path.join(seminar_directory, 'models')
+    models_path = os.path.join(seminar_directory, 'model_archive')
     world_path = os.path.join(models_path, 'world', 'empty.world')
 
     # robot_path = os.path.join(models_path, 'robotic_arm', 'robotic_arm.sdf')
@@ -54,7 +57,7 @@ def generate_launch_description():
             launch_arguments = {"use_sim_time":"true", "gz_args":world_path}.items(),
         )
 
-    # node for robot sdf
+    # spawn robot using ros_gz_sim
     create_robot = Node(
         package="ros_gz_sim",
         executable="create",
@@ -68,7 +71,7 @@ def generate_launch_description():
         output='screen'
     )
 
-    # bridge node
+    # bridge node using ros_gz_bridge
     bridge = Node(
         package='ros_gz_bridge',
         executable='parameter_bridge',
@@ -77,14 +80,6 @@ def generate_launch_description():
             'qos_overrides./tf_static.publisher.durability': 'transient_local',
             'use_sim_time': True,
         }],
-        output='screen'
-    )
-
-    # command publisher node
-    cpn = Node(
-        package='viz_sim',
-        executable='command_publisher',
-        parameters=[{'use_sim_time': True,}],
         output='screen'
     )
 
@@ -100,13 +95,10 @@ def generate_launch_description():
             shell=True
         ),
 
-
         # 2. robot sdf file spawn
         create_robot,
 
         # 3. execute topic bridge
         bridge,
 
-        # test: command publisher
-        cpn,
     ])

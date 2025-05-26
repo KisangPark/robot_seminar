@@ -1,5 +1,35 @@
-- ros_topic_name: "j1_pos"
+- ros_topic_name: "ign_export/j1_pos"
   gz_topic_name: "/j1_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "ignition.msgs.Double"
+  direction: ROS_TO_GZ
+
+- ros_topic_name: "ign_export/j2_pos"
+  gz_topic_name: "/j2_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "ignition.msgs.Double"
+  direction: ROS_TO_GZ
+
+- ros_topic_name: "ign_export/j3_pos"
+  gz_topic_name: "/j3_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "ignition.msgs.Double"
+  direction: ROS_TO_GZ
+
+- ros_topic_name: "ign_export/j4_pos"
+  gz_topic_name: "/j4_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "ignition.msgs.Double"
+  direction: ROS_TO_GZ
+
+- ros_topic_name: "ign_export/j5_pos"
+  gz_topic_name: "/j5_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "ignition.msgs.Double"
+  direction: ROS_TO_GZ
+
+- ros_topic_name: "ign_export/j6_pos"
+  gz_topic_name: "/j6_pos"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "ignition.msgs.Double"
   direction: ROS_TO_GZ

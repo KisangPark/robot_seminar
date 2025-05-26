@@ -33,19 +33,18 @@ def generate_launch_description():
     pkg_path = os.path.join(seminar_directory, 'ros2_ws', 'src', 'viz_sim')
     share_pkg_path = os.path.join(get_package_share_directory('viz_sim'))
 
-    # sdf path
-    models_path = os.path.join(seminar_directory, 'models')
-    world_path = os.path.join(models_path, 'world', 'empty.world')
-    # robot_path = os.path.join(pkg_path, 'sdf_model', 'robotic_arm.sdf')
-
-    # change robot path to share directory
+    # robot sdf path
     robot_path = os.path.join(share_pkg_path, 'sdf_model', 'robotic_arm.sdf')
+
+    # rviz2 configuration path
+    rviz_path = os.path.join(seminar_directory, 'configure', 'robotic_arm_visualize.rviz')
 
 
     # open sdf file -> make robot description
     with open(robot_path, 'r') as rf:
         robot_desc = rf.read()
 
+    # joint state publisher node
     jsp = Node(
         package='joint_state_publisher',
         executable='joint_state_publisher',
@@ -57,6 +56,7 @@ def generate_launch_description():
         ]
     )
 
+    # robot state publisher node
     rsp = Node(
     package='robot_state_publisher',
     executable='robot_state_publisher',
@@ -66,13 +66,22 @@ def generate_launch_description():
         {'use_sim_time': True,
         'robot_description': robot_desc},
     ]
-)
+    )
+
+    # rviz node
+    rviz = Node(
+        package='rviz2',
+        executable='rviz2',
+        output='screen',
+        arguments=[{"rviz_config":rviz_path}]
+    )
 
 
     return LaunchDescription(
         [
             rsp,
             jsp,
+            rviz,
         ]
     )
 
