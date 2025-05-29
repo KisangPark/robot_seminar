@@ -36,7 +36,8 @@ setup(
             # be aware of format!
             # 'executable_name = package_name.file_name:main',
             'package_test = viz_sim.package_test:main',
-            'topic_converter = viz_sim.topic_converter:main'
+            'topic_converter = viz_sim.topic_converter:main',
+            'action_publisher = viz_sim.action_publisher:main',
         ],
     },
 )

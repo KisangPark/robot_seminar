@@ -37,7 +37,7 @@ def generate_launch_description():
     robot_path = os.path.join(share_pkg_path, 'sdf_model', 'robotic_arm.sdf')
 
     # rviz2 configuration path
-    rviz_path = os.path.join(seminar_directory, 'configure', 'robotic_arm_visualize.rviz')
+    rviz_path = os.path.join(seminar_directory, 'configure', 'arm.rviz')
 
 
     # open sdf file -> make robot description
@@ -73,7 +73,7 @@ def generate_launch_description():
         package='rviz2',
         executable='rviz2',
         output='screen',
-        arguments=[{"rviz_config":rviz_path}]
+        arguments=["--display-config", rviz_path]
     )
 
 

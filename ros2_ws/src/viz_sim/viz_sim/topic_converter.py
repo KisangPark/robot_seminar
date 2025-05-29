@@ -40,33 +40,52 @@ class TOPIC_CONVERTER(Node):
     def convert (self, msg):
         # convert JointState message into float messages
         
-        # save joint data
-        d
+        # save joint position according to name
+        self.joint_position_list = np.zeros(len(msg.name))
+
+        """
+        header 
+        string list name
+        float list position
+        float list velocity
+        float 64 effort
+        """
+        for i, joint_name in enumerate(msg.name):
+
+            # replace string to index
+            index = int(joint_name.replace("joint", ""))
+            self.joint_position_list[index] = msg.position[i]
+
+        # joint position saved in order
+
 
     # timer callback
     def publish(self):
 
-        # generate text
-        msg_1 = Float64()
+        # generate list of message
+        publisher_list = [self.publisher_1, self.publisher_2, self.publisher_3,
+        self.publisher_4, self.publisher_5, self.publisher_6]
 
-        # flag
-        flag = np.random.randint(0, 2)
+        for i, publisher in enumerate(publisher_list):
 
-        # number
-        if flag == 1:
-            number = 3.1
-        else:
-            number = 2.5
+            # generate Float message, publish
 
-        msg_1.data = number
+            msg = Float64()
 
-        self.publisher_1.publish(msg_1)
+            try:
+                msg.data = self.joint_position_list[i]
+            except:
+                msg.data = 0.0
+            
+            publisher.publish(msg)
+
+        
 
 
 # main code -> spin
 def main():
     rclpy.init(args=None)
-    node = COMMAND_PUBLISHER()
+    node = TOPIC_CONVERTER()
     rclpy.spin(node)
     node.destroy_node()
     rclpy.shutdown()
