@@ -27,13 +27,13 @@ def generate_launch_description():
 
 
     # launch gz_ctrl
-    sim = IncludeLaunchDescription(
+    gz_ctrl = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             [os.path.join(get_package_share_directory('viz_sim'), "launch", "gz_ctrl.launch.py")]),
         )
 
     # launch rsp
-    sim = IncludeLaunchDescription(
+    rsp = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             [os.path.join(get_package_share_directory('viz_sim'), "launch", "rsp.launch.py")]),
         )
@@ -42,7 +42,7 @@ def generate_launch_description():
     # topic converter node
     topic_converter = Node(
         package='viz_sim',
-        executable='topic_publisher',
+        executable='topic_converter',
         output='screen'
     )
 

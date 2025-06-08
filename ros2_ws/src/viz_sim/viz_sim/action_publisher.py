@@ -27,17 +27,22 @@ class ACTION_PUBLISHER(Node):
         self.publisher = self.create_publisher(JointState, "/joint_command", qos_profile)
         self.timer_1 = self.create_timer(0.1, self.publish)
 
+        self.flag = True
+        self.value = 0.0
+
 
     def publish (self):
 
         # generate angle position value
-        random = np.random.randint(0,3)
-        if random == 0:
-            value = 1
-        elif random == 1:
-            value = 2
+        if self.flag == True:
+            self.value += 0.02
+            if self.value > 1.0:
+                self.flag = False
         else:
-            value = 3
+            self.value -= 0.02
+            if self.value < -1.0:
+                self.flag=True
+
 
         # make lists -> name, position, velocity, effort
 
@@ -46,16 +51,18 @@ class ACTION_PUBLISHER(Node):
         for i in range(6):
             temp_name = f"joint{i}"
             name.append(temp_name)
-            position.append(value)
+            position.append(self.value)
 
         # publish joint command
         msg = JointState()
 
         # data
+        self.get_logger().info(f"position string: {position}")
+
         msg.name = name
         msg.position = position
-        msg.velocity = np.zeros(6)
-        msg.effort = np.zeros(6)
+        # msg.velocity = np.zeros(6)
+        # msg.effort = np.zeros(6)
 
         self.publisher.publish(msg)
 

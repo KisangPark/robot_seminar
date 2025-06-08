@@ -42,6 +42,7 @@ class TOPIC_CONVERTER(Node):
         
         # save joint position according to name
         self.joint_position_list = np.zeros(len(msg.name))
+        # self.get_logger().info(f"message length: {len(msg.position)}")
 
         """
         header 
@@ -54,7 +55,8 @@ class TOPIC_CONVERTER(Node):
 
             # replace string to index
             index = int(joint_name.replace("joint", ""))
-            self.joint_position_list[index] = msg.position[i]
+            # self.get_logger().info(f"index number: {i}, {index-1}")
+            self.joint_position_list[index - 1] = msg.position[i-1]
 
         # joint position saved in order
 

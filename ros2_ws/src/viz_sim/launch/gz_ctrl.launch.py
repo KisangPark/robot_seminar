@@ -48,13 +48,16 @@ def generate_launch_description():
     # bridge yaml file location
     bridge_path = os.path.join(share_pkg_path, 'sdf_model', 'bridge.yaml')
 
+    # debugging file test
+    debug_path = os.path.join(share_pkg_path, 'sdf_model', 'debug_plugin.sdf')
+
 
 
     # launch gazebo with ros_gz_sim
     sim = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             [os.path.join(get_package_share_directory('ros_gz_sim'), "launch", "gz_sim.launch.py")]),
-            launch_arguments = {"use_sim_time":"true", "gz_args":world_path}.items(),
+            launch_arguments = {"use_sim_time":"true", "gz_args":debug_path}.items(), # world_path
         )
 
     # spawn robot using ros_gz_sim
@@ -88,6 +91,10 @@ def generate_launch_description():
     return LaunchDescription([
         # 1-1. empty gazebo world
         sim,
+        # ExecuteProcess(
+        #     cmd=['ign', 'gazebo', world_path, '--verbose'],
+        #     output='screen'
+        # ),
 
         # # 1-2. delay, waiting gazebo to be ready
         ExecuteProcess(
@@ -96,8 +103,8 @@ def generate_launch_description():
         ),
 
         # 2. robot sdf file spawn
-        create_robot,
-
+        # create_robot,
+        
         # 3. execute topic bridge
         bridge,
 
